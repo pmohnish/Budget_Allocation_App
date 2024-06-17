@@ -6,14 +6,14 @@ const Currency = () => {
     const handleCurrencyChange = (event) => {
         dispatch({
             type: 'CHG_CURRENCY',
-            payload: event.taget.value
+            payload: event.target.value
         });
     }
     return(
-        <div className='btn btn-primary' style={{display:'flex',alignItems:'center', backgroundColor:'green'}}>
+        <div className='btn btn-primary' style={{display:'flex',alignItems:'center',width:"200px"}}>
             
             <span style={{marginRight:'10px'}}>Currency:</span>
-            <select value={currency}  onChange={handleCurrencyChange}>
+            <select value={currency} className='btn btn-primary'  onChange={handleCurrencyChange}>
                 <option value="$">$ Dollar</option>
                 <option value="£">£ Pound</option>
                 <option value="€">€ Euro</option>

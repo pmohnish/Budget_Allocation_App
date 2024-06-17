@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
-    const { budget,expenses } = useContext(AppContext);
+    const { budget,expenses, currency, dispatch } = useContext(AppContext);
     const [newBudget, setNewBudget] = useState(budget);
     let expenseTotal=0;
     for(let i=0;i<expenses.length;i++){
@@ -19,10 +19,23 @@ const Budget = () => {
         }
 
     }
+
+    const changeBudget = () => {
+        dispatch({
+            type:'SET_BUDGET',
+            payload: newBudget
+        });
+
+    }
+
     return (
 <div className='alert alert-secondary'>
-<span>Budget: £</span>
-<input type="number" step="10" value={newBudget} onChange={handleBudgetChange}></input>
+<span>Budget: {currency}{budget}</span>
+<div id="change-budget-form">
+    <input type="number" step="10" value={newBudget} onChange={handleBudgetChange}></input>
+    <button className='btn btn-primary' style={{backgroundColor:'lightblue'}} onClick={changeBudget}>Change Budget</button>
+</div>
+
 </div>
     );
 };
