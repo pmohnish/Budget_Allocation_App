@@ -10,10 +10,10 @@ const Currency = () => {
         });
     }
     return(
-        <div className='btn btn-primary' style={{display:'flex',alignItems:'center',width:"200px"}}>
+        <div className='btn btn-primary' style={{display:'flex',alignItems:'center',width:"200px", backgroundColor:'green'}}>
             
             <span style={{marginRight:'10px'}}>Currency:</span>
-            <select value={currency} className='btn btn-primary'  onChange={handleCurrencyChange}>
+            <select style={{paddingRight:'10px'}} value={currency} className='btn btn-primary'  onChange={handleCurrencyChange}>
                 <option value="$">$ Dollar</option>
                 <option value="£">£ Pound</option>
                 <option value="€">€ Euro</option>

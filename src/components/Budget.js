@@ -31,9 +31,9 @@ const Budget = () => {
     return (
 <div className='alert alert-secondary'>
 <span>Budget: {currency}{budget}</span>
-<div id="change-budget-form">
+<div id="change-budget-form" style={{marginTop:'10px'}}>
     <input type="number" step="10" value={newBudget} onChange={handleBudgetChange}></input>
-    <button className='btn btn-primary' style={{backgroundColor:'lightblue'}} onClick={changeBudget}>Change Budget</button>
+    <button className='btn btn-primary' style={{backgroundColor:'lightblue', marginTop:'5px'}} onClick={changeBudget}>Change Budget</button>
 </div>
 
 </div>
